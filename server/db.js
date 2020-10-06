@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { MONGOURI } = require('./key');
+const { MONGOURI2 } = require('./key');
 //const config = require('config');
 //const db = config.get('mongoURI2');
 
@@ -37,7 +37,7 @@ const { MONGOURI } = require('./key');
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect(MONGOURI, {
+		await mongoose.connect(MONGOURI2, {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useUnifiedTopology: true,

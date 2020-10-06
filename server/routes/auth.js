@@ -1,13 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = require('../key');
+const auth = require('../middleware/auth');
 
 const User = require('../models/User');
+
+// @route      GET api/get
+// @desc       Get logged in user
+// @access     Private
+
+router.get('/signin', auth, async (req, res) => {
+	//console.log(req.user);
+	console.log('The user details are ' + req.user);
+	try {
+		const user = await User.findById(req.user.id).select('-password');
+		res.json(user);
+	} catch (err) {
+		console.error(err.messaga);
+		res.status(500).json('Server Error');
+	}
+	//res.send('hello User');
+	// Protected route
+});
+
+// @route      POST api/get
+// @desc       Auth user and get token
+// @access     Public
 
 router.post('/signin', async (req, res) => {
 	const { email, password } = req.body;
 	if (!email || !password) {
-		res.status(400).json({ error: 'Please add email or password' });
+		return res.status(400).json({ error: 'Please add email or password' });
 	}
 
 	try {
@@ -25,7 +50,11 @@ router.post('/signin', async (req, res) => {
 			return res.status(400).json({ msg: 'Invalid Credentials password' });
 		}
 
-		res.status(200).json({ message: 'Successful login ' });
+		// res.status(200).json({ message: 'Successful login ' });
+		//console.log(user.id);
+
+		const token = jwt.sign({ id: user.id }, JWT_SECRET);
+		res.json({ token });
 	} catch (err) {
 		console.error(err.message);
 		res.status(500).send('Server Error');
