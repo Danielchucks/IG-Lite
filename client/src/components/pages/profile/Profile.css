@@ -1,0 +1,27 @@
+.profile-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 18px 0;
+	border-bottom: 1px solid #333;
+}
+
+.follow {
+	display: flex;
+	justify-content: space-between; /*This will not work without the width*/
+	width: 108%;
+}
+
+.container {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.item {
+	width: 30%;
+}

@@ -1,0 +1,9 @@
+.home-card {
+	max-width: 500px;
+	height: max-content;
+	margin: 28px auto;
+}
+
+i {
+	color: red;
+}
