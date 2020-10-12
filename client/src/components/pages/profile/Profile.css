@@ -16,7 +16,8 @@
 	margin: 0 auto;
 }
 
-.gallery {
+/* For Flex
+ .gallery {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -24,4 +25,15 @@
 
 .item {
 	width: 30%;
+} */
+
+/* For Grid  */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.item {
+	width: 100%;
 }

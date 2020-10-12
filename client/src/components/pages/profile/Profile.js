@@ -23,10 +23,10 @@ const Profile = () => {
 			</div>
 
 			<div className='gallery'>
-				<img
+				{/* <img
 					className='item'
 					src='https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-				/>
+				/> */}
 				<img
 					className='item'
 					src='https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'

@@ -6,6 +6,7 @@ import Home from './components/pages/home/Home';
 import Login from './components/pages/login/Login';
 import Profile from './components/pages/profile/Profile';
 import Signup from './components/pages/signup/Signup';
+import CreatePosts from './components/pages/posts/CreatePosts';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 			<Route path='/signin' component={Login} />
 			<Route path='/profile' component={Profile} />
 			<Route path='/signup' component={Signup} />
+			<Route path='/create' component={CreatePosts} />
 		</BrowserRouter>
 	);
 }
