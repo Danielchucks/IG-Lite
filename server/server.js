@@ -1,7 +1,7 @@
 // jwW7JSdg01D36pG5
-
 const express = require('express');
 const connectDB = require('./db');
+const cors = require('cors');
 // const mongoose = require('mongoose');
 // const { MONGOURI } = require('./key');
 
@@ -20,12 +20,15 @@ connectDB();
 // });
 
 // Init Middleware
+// app.use(cors()); for production
 app.use(express.json({ extended: false }));
 
 // Defining Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/post', require('./routes/post'));
+app.use('/api/follow', require('./routes/follow'));
+// app.use('/api/follow', require('./routes/follow'));
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { MONGOURI2 } = require('./key');
+const { MONGOURI, MONGOURI2 } = require('./key');
 //const config = require('config');
 //const db = config.get('mongoURI2');
 
